@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EcoStay - Stay Close to Nature</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+        <div class="leaf">🌿</div>
+
+        <div>
+            <h2>EcoStay</h2>
+            <p>Stay close to Nature</p>
+        </div>
+    </div>
+
+    <nav>
+        <a href="#home" class="active">Home</a>
+        <a href="#stays">Stays</a>
+        <a href="#experiences">Experiences</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <button class="top-book" onclick="openBooking()">
+        📅 Book Now
+    </button>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <p class="hero-small">
+            Escape. Relax. Reconnect.
+        </p>
+
+        <h1>
+            Stay Close to<br>
+            Nature
+        </h1>
+
+        <p class="hero-description">
+            Discover handpicked eco-friendly stays
+            surrounded by nature, comfort and tranquillity.
+        </p>
+
+    </div>
+
+
+    <!-- SEARCH BAR -->
+
+    <div class="search-box">
+
+        <div class="search-item">
+
+            <span>📍</span>
+
+            <div>
+                <label>Where to?</label>
+                <input
+                    type="text"
+                    id="place"
+                    placeholder="Anywhere">
+            </div>
+
+        </div>
+
+
+        <div class="search-item">
+
+            <span>📅</span>
+
+            <div>
+                <label>Check-in</label>
+                <input type="date" id="checkin">
+            </div>
+
+        </div>
+
+
+        <div class="search-item">
+
+            <span>📅</span>
+
+            <div>
+                <label>Check-out</label>
+                <input type="date" id="checkout">
+            </div>
+
+        </div>
+
+
+        <div class="search-item">
+
+            <span>👥</span>
+
+            <div>
+                <label>Guests</label>
+
+                <input
+                    type="number"
+                    id="guests"
+                    value="2"
+                    min="1">
+            </div>
+
+        </div>
+
+
+        <button class="search-btn" onclick="searchStays()">
+            🔍 Search Stays
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= STAYS ================= -->
+
+<section class="stays" id="stays">
+
+    <div class="section-title">
+
+        <span>🌿</span>
+
+        <h2>Explore Our Stays</h2>
+
+        <p>
+            Handpicked stays for your perfect getaway
+        </p>
+
+    </div>
+
+
+    <div class="stay-grid">
+
+
+        <!-- CARD 1 -->
+
+        <div class="stay-card">
+
+            <div class="stay-photo">
+
+                <img
+                    src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800&q=85"
+                    alt="Green Valley Farm">
+
+                <span class="category">
+                    🌱 Farm Stay
+                </span>
+
+            </div>
+
+
+            <div class="stay-details">
+
+                <h3>Green Valley Farm</h3>
+
+                <p class="location">
+                    📍 Coorg, Karnataka
+                </p>
+
+                <div class="price-row">
+
+                    <div>
+                        <strong>₹2,499</strong>
+                        <small>/ night</small>
+                    </div>
+
+                    <div class="rating">
+                        ⭐ 4.8 (120)
+                    </div>
+
+                </div>
+
+                <button onclick="bookRoom('Green Valley Farm',2499)">
+                    Book Now
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CARD 2 -->
+
+        <div class="stay-card">
+
+            <div class="stay-photo">
+
+                <img
+                    src="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?auto=format&fit=crop&w=800&q=85"
+                    alt="Ocean Breeze Villa">
+
+                <span class="category">
+                    🏖️ Beach Stay
+                </span>
+
+            </div>
+
+
+            <div class="stay-details">
+
+                <h3>Ocean Breeze Villa</h3>
+
+                <p class="location">
+                    📍 Varkala, Kerala
+                </p>
+
+                <div class="price-row">
+
+                    <div>
+                        <strong>₹3,999</strong>
+                        <small>/ night</small>
+                    </div>
+
+                    <div class="rating">
+                        ⭐ 4.7 (98)
+                    </div>
+
+                </div>
+
+                <button onclick="bookRoom('Ocean Breeze Villa',3999)">
+                    Book Now
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CARD 3 -->
+
+        <div class="stay-card">
+
+            <div class="stay-photo">
+
+                <img
+                    src="https://images.unsplash.com/photo-1520984032042-162d526883e0?auto=format&fit=crop&w=800&q=85"
+                    alt="Jungle Tree House">
+
+                <span class="category">
+                    🌳 Tree House
+                </span>
+
+            </div>
+
+
+            <div class="stay-details">
+
+                <h3>Jungle Tree House</h3>
+
+                <p class="location">
+                    📍 Wayanad, Kerala
+                </p>
+
+                <div class="price-row">
+
+                    <div>
+                        <strong>₹2,999</strong>
+                        <small>/ night</small>
+                    </div>
+
+                    <div class="rating">
+                        ⭐ 4.9 (76)
+                    </div>
+
+                </div>
+
+                <button onclick="bookRoom('Jungle Tree House',2999)">
+                    Book Now
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CARD 4 -->
+
+        <div class="stay-card">
+
+            <div class="stay-photo">
+
+                <img
+                    src="https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?auto=format&fit=crop&w=800&q=85"
+                    alt="Misty Mountain Cottage">
+
+                <span class="category">
+                    ⛰️ Hill Stay
+                </span>
+
+            </div>
+
+
+            <div class="stay-details">
+
+                <h3>Misty Mountain Cottage</h3>
+
+                <p class="location">
+                    📍 Ooty, Tamil Nadu
+                </p>
+
+                <div class="price-row">
+
+                    <div>
+                        <strong>₹2,199</strong>
+                        <small>/ night</small>
+                    </div>
+
+                    <div class="rating">
+                        ⭐ 4.6 (88)
+                    </div>
+
+                </div>
+
+                <button onclick="bookRoom('Misty Mountain Cottage',2199)">
+                    Book Now
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <button class="view-all">
+        View All Stays
+    </button>
+
+</section>
+
+
+
+<!-- ================= WHY ECOSTAY ================= -->
+
+<section class="why" id="about">
+
+    <div class="section-title">
+
+        <h2>Why Choose EcoStay?</h2>
+
+    </div>
+
+
+    <div class="why-grid">
+
+        <div class="why-card">
+
+            <div class="why-icon">🌿</div>
+
+            <h3>Eco Friendly</h3>
+
+            <p>
+                Sustainable stays that care
+                for nature and our future.
+            </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+            <div class="why-icon">🏡</div>
+
+            <h3>Handpicked Stays</h3>
+
+            <p>
+                Selected for quality, comfort
+                and amazing experiences.
+            </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+            <div class="why-icon">📅</div>
+
+            <h3>Easy Booking</h3>
+
+            <p>
+                Hassle-free booking with
+                secure and quick process.
+            </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+            <div class="why-icon">🏷️</div>
+
+            <h3>Best Price Guarantee</h3>
+
+            <p>
+                Get the best deals and
+                unbeatable prices.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= EXPERIENCES ================= -->
+
+<section class="experiences" id="experiences">
+
+    <div class="section-title">
+
+        <h2>Popular Experiences</h2>
+
+        <p>
+            Add more memories to your stay
+        </p>
+
+    </div>
+
+
+    <div class="experience-grid">
+
+
+        <div class="experience-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=800&q=85">
+
+            <div>
+                <h3>Trekking</h3>
+                <p>Explore scenic trails and beautiful views.</p>
+            </div>
+
+        </div>
+
+
+        <div class="experience-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1478827536114-da961b7d8d91?auto=format&fit=crop&w=800&q=85">
+
+            <div>
+                <h3>Campfire Night</h3>
+                <p>Enjoy cozy nights with music and stories.</p>
+            </div>
+
+        </div>
+
+
+        <div class="experience-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=85">
+
+            <div>
+                <h3>Organic Food</h3>
+                <p>Taste fresh, organic local cuisine.</p>
+            </div>
+
+        </div>
+
+
+        <div class="experience-card">
+
+            <img
+                src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=800&q=85">
+
+            <div>
+                <h3>Village Walk</h3>
+                <p>Discover local culture and traditions.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <button class="experience-btn">
+        Explore Experiences
+    </button>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer id="contact">
+
+    <div class="footer-grid">
+
+
+        <div class="footer-about">
+
+            <h2>🌿 EcoStay</h2>
+
+            <p>
+                EcoStay brings you closer to nature
+                with handpicked stays that are
+                eco-friendly, comfortable and memorable.
+            </p>
+
+            <div class="social">
+                <span>f</span>
+                <span>◎</span>
+                <span>𝕏</span>
+                <span>p</span>
+            </div>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>Quick Links</h3>
+
+            <a href="#home">Home</a>
+            <a href="#stays">Stays</a>
+            <a href="#experiences">Experiences</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>Support</h3>
+
+            <a href="#">FAQs</a>
+            <a href="#">Booking Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Refund Policy</a>
+
+        </div>
+
+
+        <div class="newsletter">
+
+            <h3>Subscribe to our newsletter</h3>
+
+            <p>
+                Get updates on new stays and offers.
+            </p>
+
+            <div class="email-box">
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email">
+
+                <button onclick="subscribe()">
+                    ➤
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 EcoStay. All rights reserved.
+        </span>
+
+        <span>
+            Made with ❤️ for nature lovers
+        </span>
+
+    </div>
+
+</footer>
+
+
+
+<!-- ================= BOOKING POPUP ================= -->
+
+<div class="modal" id="bookingModal">
+
+    <div class="modal-box">
+
+        <button
+            class="close"
+            onclick="closeBooking()">
+            ×
+        </button>
+
+        <h2>Book Your Stay</h2>
+
+        <p id="selectedStay">
+            Complete your booking details.
+        </p>
+
+
+        <form onsubmit="confirmBooking(event)">
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Full Name"
+                required>
+
+            <input
+                type="email"
+                id="bookingEmail"
+                placeholder="Email Address"
+                required>
+
+            <input
+                type="tel"
+                id="phone"
+                placeholder="Phone Number"
+                required>
+
+            <label>Check-in</label>
+
+            <input
+                type="date"
+                id="modalCheckin"
+                required>
+
+            <label>Check-out</label>
+
+            <input
+                type="date"
+                id="modalCheckout"
+                required>
+
+            <input
+                type="number"
+                id="modalGuests"
+                min="1"
+                value="2"
+                placeholder="Guests"
+                required>
+
+            <button type="submit">
+                Confirm Booking
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
